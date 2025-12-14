@@ -1,0 +1,96 @@
+/* Reset basics */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: sans-serif;
+}
+
+/* --- Intro Overlay Styles --- */
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Stays on top */
+    background: #000; /* Fallback color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out; /* Smooth fade out effect */
+}
+
+/* Make video cover the whole screen */
+#christmas-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills screen without stretching */
+    z-index: -1; /* Puts video behind the button */
+}
+
+/* --- Button Styles --- */
+#enter-btn {
+    /* Style the button look */
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #c4955f; 
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    
+    /* --- ANIMATION SETTINGS --- */
+    opacity: 0; /* Start completely invisible */
+    
+    /* This tells the browser: "When opacity changes, take 3 seconds to do it" */
+    transition: opacity 3s ease-in, transform 0.3s ease, background 0.3s ease;
+    
+    z-index: 10;
+    pointer-events: none; /* Make sure you can't click it while it's invisible */
+}
+
+/* When JavaScript adds this class, the opacity changes to 1 */
+#enter-btn.visible {
+    opacity: 1;
+    pointer-events: auto; /* Enable clicking now that it is visible */
+}
+
+/* Hover effect (optional) */
+#enter-btn:hover {
+    background-color: #fff;
+    color: #d42426;
+    transform: scale(1.05);
+}
+
+#enter-btn:hover {
+    background-color: #fff;
+    color: #d42426;
+    transform: scale(1.05);
+}
+
+/* Utility class to hide the button initially */
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* User can't click invisible button */
+    transition: opacity 1s ease;
+}
+
+/* Utility class to show the button */
+.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* --- Main Content Styles --- */
+#main-content {
+    padding: 50px;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}

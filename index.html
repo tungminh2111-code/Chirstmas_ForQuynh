@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quynh📸</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+</head>
+<body>
+<div id="snow-container"></div>
+    <h1>🎄 Merry Christmas 2025</h1>
+
+    <div class="workspace">
+    <video id="webcam" class="mirrored" autoplay playsinline></video>
+    
+    <canvas id="c" width="480" height="640"></canvas>
+    
+    <div id="countdownTimer" class="countdown-timer" style="display:none;">3</div>
+    </div>
+
+
+    <div class="controls" >
+        <button id="btnCapture" class="btn-capture">📸 Capture Single</button>
+        <button id="btnCollage" class="btn-capture" style="background-color: #8e44ad;">田 Capture 4-Grid</button>
+        
+        <button id="btnReset" class="btn-reset">🔄 Retake</button>
+        <button id="btnDownload" class="btn-download">💾 Download</button>
+</button>
+</div>
+    </div>
+
+    <div id="editControls" class="controls" style="display:none; flex-direction: column; align-items: center;">
+        
+        <div id="labelframe" class="section-label">Select a Frame</div>
+        
+        <div id="frameid" class="frame-gallery">
+            <img class="frame-thumb" 
+                 src="./icon/christmas-wreath.png" 
+                 onclick="setFrame('./frames/0.png')" 
+                 title="Snow Frame">
+            
+            <img class="frame-thumb" 
+                 src="./icon/christmas-tree.png" 
+                 onclick="setFrame('./frames/1.png')" 
+                 title="My Custom Frame">
+            
+            <img class="frame-thumb" 
+                 src="./icon/gingerbread-man.png" 
+                 onclick="setFrame('./frames/2.png')" 
+                 title="My Custom Frame">
+            
+            <!-- <img id="grid4frams" class="frame-thumb" 
+                 src="./icon/hat.png" 
+                 onclick="setFrame('./frames/4grid.png')" 
+                 title="My Custom Frame"> -->
+                 
+             </div>
+
+        <div id = "sticker-id"  class="section-label">Add Stickers</div>
+        <div id="stickerbtn" class="sticker-controls">
+            <button class="sticker-btn hat-btn " onclick="addSticker('./icon/hat.png')"></button>
+            <button class="sticker-btn tree-btn" onclick="addSticker('./icon/christmas-tree.png')"></button>
+            <button class="sticker-btn bear-btn" onclick="addSticker('./icon/gingerbread-man.png')"></button>
+            <button class="sticker-btn fish-btn" onclick="addSticker('./Assets/fish-photobooth/camerapage/stickers/fish.png')"></button>
+            <button class="sticker-btn octopus-btn" onclick="addSticker('./Assets/fish-photobooth/camerapage/stickers/octopus.png')"></button>
+            <button class="sticker-btn seaweed-btn" onclick="addSticker('./Assets/fish-photobooth/camerapage/stickers/seaweed1.png')"></button>
+            <button class="sticker-btn axolotl-btn" onclick="addSticker('./Assets/fish-photobooth/camerapage/stickers/axolot.png')"></button>
+            <button class="sticker-btn bubble-btn" onclick="addSticker('./Assets/fish-photobooth/camerapage/stickers/bubble1.png')"></button>
+            <button class="sticker-btn reset-btn">Reset</button>
+        </div>
+    </div>
+
+    <div class="music-player">
+    
+    <div class="player-bar">
+        <div class="track-info">
+            <span class="music-icon">🎵</span>
+            <span id="currentTitle">Select a song...</span>
+        </div>
+        <button id="btnPlayPause" class="btn-control">▶</button>
+    </div>
+
+    <div class="track-list" id="trackList">
+        </div>
+
+    <audio id="audioElement" loop></audio>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
