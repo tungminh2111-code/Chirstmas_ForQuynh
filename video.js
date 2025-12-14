@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fade out the overlay
         overlay.style.opacity = '0';
 
-        window.location.href = 'index.html';
+        window.location.href = 'mainpage.html';
         
         // Remove overlay from DOM after fade completes (1s) to allow scrolling
         setTimeout(() => {
